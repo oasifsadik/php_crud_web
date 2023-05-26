@@ -1,0 +1,12 @@
+.menu ul {
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+footer {
+    height: 50px;
+}
