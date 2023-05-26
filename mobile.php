@@ -42,7 +42,7 @@ include_once("include/header.php")
                                 <td><?php echo $all['mobile_price'];?></td>
                                 <td>
                                     <a href="" class="btn btn-sm btn-danger">Edit</a>
-                                    <a href="" class="btn btn-sm btn-primary">Delete</a>
+                                    <a href="delete.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
                                     </td>
                             </tr>
                                 <?php
@@ -61,6 +61,22 @@ include_once("include/header.php")
                 <h4 class="display-2">Add Mobile</h4>
             </div>
             <div class="col-md-8 offset-2">
+                <!-- Display Message -->
+                <?php 
+
+                    if(isset($_SESSION['message'])){?>
+
+                        <div class="alert alert-<?php echo $_SESSION['type']?> alert-dismissible fade show" role="alert">
+
+                        <?php echo $_SESSION['message'];?>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+
+                    <?php
+                            unset($_SESSION['message']);
+                    }
+                ?>
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" name="mobile_name" class="form-control" placeholder="Enter mobile Name" require>

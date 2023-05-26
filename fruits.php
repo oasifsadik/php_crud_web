@@ -43,8 +43,8 @@ include_once("include/header.php")
                                 <td><img src="upload/<?php echo $all['img'];?>" width="100px;" height="80px" alt=""></td>
                                 <td><?php echo $all['price'];?></td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-danger">Edit</a>
-                                    <a href="" class="btn btn-sm btn-primary">Delete</a>
+                                    <a href="fruits/edit.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-danger">Edit</a>
+                                    <a href="delete.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
                                     </td>
                             </tr>
                                 <?php

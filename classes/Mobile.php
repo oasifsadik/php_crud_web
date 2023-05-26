@@ -14,10 +14,12 @@ class Mobile extends Connection{
         $sql = "INSERT INTO mobile (mobile_name, enter_mobile_qty, mobile_img, mobile_price) VALUES ('$name', '$qty', '$imageName', '$price')";
         $result = $this->con->query($sql);
         if($result){
+            $_SESSION['message'] = "Data Inserted Successfully!";
+            $_SESSION['type'] = "success";
             move_uploaded_file($tempImage,"upload/mobile".$imageName);
-            echo"Data Insert Successfully";
                 }else{
-                    echo "Data Insert Fail";
+                    $_SESSION['message'] = "Data Not Inserted!";
+                $_SESSION['type'] = "danger";
                 }
     }
     public function show()
