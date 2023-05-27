@@ -38,11 +38,11 @@ include_once("include/header.php")
                                 <td><?php echo $s++;?></td>
                                 <td><?php echo $all['mobile_name'];?></td>
                                 <td><?php echo $all['enter_mobile_qty'];?></td>
-                                <td><img src="upload/mobile<?php echo $all['mobile_img'];?>" width="100px;" height="80px" alt=""></td>
+                                <td><img src="upload/<?php echo $all['mobile_img'];?>" width="100px;" height="80px" alt=""></td>
                                 <td><?php echo $all['mobile_price'];?></td>
                                 <td>
-                                    <a href="" class="btn btn-sm btn-danger">Edit</a>
-                                    <a href="delete.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
+                                    <a href="edit_mobile.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-danger">Edit</a>
+                                    <a href="delete_mobile.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
                                     </td>
                             </tr>
                                 <?php
