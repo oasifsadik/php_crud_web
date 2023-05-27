@@ -1,6 +1,6 @@
 <?php
-include("classes/Laptop.php");
-$t1 = new Laptop();
+include("classes/Sport.php");
+$t1 = new Sport();
 
 $id = $_GET['id'];
 if(isset($_GET['id']))

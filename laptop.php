@@ -2,9 +2,10 @@
 include("classes/Laptop.php");
 $laptop = new Laptop();
 
-if(isset($_POST['save'])){
-    $laptop->Add($_POST);
-}
+    if(isset($_POST['save']))
+    {
+        $laptop->Add($_POST);
+    }
 ?>
 
 <?php
@@ -21,10 +22,10 @@ include_once("include/header.php")
                         <thead>
                             <tr>
                                 <th>#sl</th>
-                                <th>Fruits</th>
-                                <th>Qty</th>
-                                <th>Fruits Image</th>
-                                <th>Price</th>
+                                <th>Laptop</th>
+                                <th>Laptop Qty</th>
+                                <th>Laptop Image</th>
+                                <th>Laptop Price</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -45,11 +46,9 @@ include_once("include/header.php")
                                     <a href="delete_laptop.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
                                     </td>
                             </tr>
-                                <?php
-                                
+                            <?php
                             }
                             ?>
-                            
                         </tbody>
                     </table>
                 </div>
@@ -61,34 +60,29 @@ include_once("include/header.php")
                 <h4 class="display-2">Add Laptop</h4>
             </div>
             <div class="col-md-8 offset-2">
-                <!-- Display Message -->
                 <?php 
-
                     if(isset($_SESSION['message'])){?>
-
                         <div class="alert alert-<?php echo $_SESSION['type']?> alert-dismissible fade show" role="alert">
-
-                        <?php echo $_SESSION['message'];?>
-
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            <?php echo $_SESSION['message'];?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
 
                     <?php
-                            unset($_SESSION['message']);
-                    }
-                ?>
+                         unset($_SESSION['message']);
+                         }
+                     ?>
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
-                    <input type="text" name="laptop_name" class="form-control" placeholder="Enter mobile Name" require>
+                    <input type="text" name="laptop_name" class="form-control" placeholder="Enter Laptop Name" require>
                 </div>
                 <div class="mb-3">
-                    <input type="number" name="enter_laptop_qty" class="form-control" placeholder="Enter mobile Quantity" require>
+                    <input type="number" name="enter_laptop_qty" class="form-control" placeholder="Enter Laptop Quantity" require>
                 </div>
                 <div class="mb-3">
                     <input type="file" name="laptop_img" class="form-control" require>
                 </div>
                 <div class="mb-3">
-                    <input type="text" name="laptop_price" placeholder="Enter mobile Price" class="form-control" require>
+                    <input type="text" name="laptop_price" placeholder="Enter Laptop Price" class="form-control" require>
                 </div>
                 <button type="submit" name="save" class="btn btn-primary w-100">Submit</button>
             </form>

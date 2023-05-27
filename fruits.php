@@ -2,11 +2,10 @@
 include("classes/Fruits.php");
 $task = new Fruits();
 
-if(isset($_POST['save'])){
-$task->store($_POST);
-// echo "<pre>";
-// print_r($_POST);
-}
+    if(isset($_POST['save']))
+    {
+        $task->store($_POST);
+    }
 ?>
 
 <?php
@@ -47,10 +46,9 @@ include_once("include/header.php")
                             <a href="delete.php?id=<?php echo $all['id']?>" class="btn btn-sm btn-primary">Delete</a>
                         </td>
                     </tr>
-                    <?php
-                                
-                            }
-                            ?>
+                    <?php     
+                     }
+                    ?>
 
                 </tbody>
             </table>
@@ -63,6 +61,17 @@ include_once("include/header.php")
             <h4 class="display-2">Add Fruits</h4>
         </div>
         <div class="col-md-8 offset-2">
+                <?php 
+                    if(isset($_SESSION['message'])){
+                ?>
+                    <div class="alert alert-<?php echo $_SESSION['type']?> alert-dismissible fade show" role="alert">
+                        <?php echo $_SESSION['message'];?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                <?php
+                    unset($_SESSION['message']);
+                    }
+                ?>
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <input type="text" name="name" class="form-control" placeholder="Enter Fruits Name" require>
